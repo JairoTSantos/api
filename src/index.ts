@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
 import verificarToken from './middleware/auth';
 import dotenv from 'dotenv';
 
@@ -6,6 +7,7 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     if (err instanceof SyntaxError && 'body' in err) {
@@ -37,7 +39,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     res.status(404).json({ status: 404, mensagem: "Endpoint não encontrado" });
 });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000; // Use 3000 se a porta não estiver definida no arquivo .env
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
