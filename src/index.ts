@@ -2,7 +2,6 @@ import express, { Request, Response, NextFunction } from 'express';
 import verificarToken from './middleware/auth';
 import dotenv from 'dotenv';
 
-
 dotenv.config();
 
 const app = express();
