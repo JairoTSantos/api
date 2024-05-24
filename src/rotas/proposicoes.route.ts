@@ -9,6 +9,8 @@ dotenv.config();
 
 const router = Router();
 
+
+
 router.get('/proposicoes', async (req, res) => {
 
     const autor = req.query.autor || process.env.ID_DEPUTAD0;
