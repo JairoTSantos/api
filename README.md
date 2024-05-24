@@ -19,7 +19,7 @@ npm install
 
 ## Configurar as Variáveis de Ambiente
 
-Antes de executar a aplicação, é necessário configurar as variáveis de ambiente. Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis:
+Antes de executar a aplicação, é necessário configurar as variáveis de ambiente. Abra o arquivo `.env` na raiz do projeto e adicione as seguintes variáveis:
 
 ```
 PORT=3000
