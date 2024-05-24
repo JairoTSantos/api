@@ -12,7 +12,6 @@ import Usuario from '../modelos/usuario.modelo';
 const router = Router();
 
 
-
 router.post('/login', async (req: Request, res: Response) => {
     const email = req.body.email;
     const senha = req.body.senha;
@@ -62,9 +61,9 @@ router.post('/login', async (req: Request, res: Response) => {
             usuario_email: usuario.usuario_email,
             usuario_id: usuario.usuario_id
         };
-        
+
         const token = jwt.sign(payload, process.env.MASTER_KEY!, { expiresIn: process.env.TOKEN_TIME });
-        
+
 
         return res.status(200).json({ status: 200, message: 'Login feito com sucesso', token: token });
     } catch (error) {
@@ -72,8 +71,6 @@ router.post('/login', async (req: Request, res: Response) => {
     }
 
 });
-
-
 
 
 export default router;

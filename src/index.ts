@@ -2,10 +2,15 @@ import express, { Request, Response, NextFunction } from 'express';
 import verificarToken from './middleware/auth';
 import dotenv from 'dotenv';
 
+import swaggerUi from 'swagger-ui-express';
+import swaggerSpecs from './swaggerConfig';
+
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     if (err instanceof SyntaxError && 'body' in err) {
