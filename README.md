@@ -47,7 +47,7 @@ Inicie a aplicação com
 ```
 npm start
 ```
-e depois acesse /api/sync para criar as tabelas do banco
+e depois acesse `/api/sync` para criar as tabelas do banco
 
 ## Acessar a Documentação
 
